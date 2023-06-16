@@ -8,3 +8,5 @@ def uniq_add(my_list=[]):
         for numb in temp:
             sum += numb
         return sum
+    else:
+        return 0
