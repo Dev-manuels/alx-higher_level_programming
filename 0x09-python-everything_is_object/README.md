@@ -20,3 +20,8 @@ in the following code, do a and b point to the same object? Answer with Yes or N
 >>> a = 89
 >>> b = a
 - 4-answer.txt
+#
+In the following code, do a and b point to the same object? Answer with Yes or No.
+>>> a = 89
+>>> b = a + 1
+- 5-answer.txt
