@@ -53,7 +53,3 @@ class Rectangle:
         if self.area() == 0:
             return (0)
         return (2 * (self._width + self._height))
-
-
-test1 = Rectangle(10)
-print(test1.perimeter())
