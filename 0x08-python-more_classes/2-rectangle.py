@@ -50,4 +50,6 @@ class Rectangle:
         return (self.width * self.height)
 
     def perimeter(self):
+        if self.area == 0:
+            return (0)
         return (2 * (self.width + self.height))
