@@ -7,4 +7,4 @@ def uppercase(str):
         else:
             word.append(letter)
     string = "".join(word)
-    print(string)
+    print("{}".format(string))
