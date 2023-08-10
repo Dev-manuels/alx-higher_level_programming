@@ -6,3 +6,5 @@ def remove_char_at(str, n):
         if j != n:
             string.append(letter)
         j += 1
+    word = "".join(string)
+    return word
