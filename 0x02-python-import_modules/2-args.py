@@ -2,7 +2,8 @@
 if __name__ == "__main__":
     import sys
 
-    argc = argc - 1
+    argc = 0
+    argc -= 1
     if argc == 1:
         print("{} argument:".format(argc))
     elif argc == 0:
