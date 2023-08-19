@@ -6,3 +6,4 @@ def best_score(a_dictionary):
             if value >= large:
                 large = value
         return large
+    return None
