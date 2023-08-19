@@ -1,9 +1,11 @@
 #!/usr/bin/python3
 def best_score(a_dictionary):
     if a_dictionary is not None:
-        large = -50
-        for value in a_dictionary.values():
+        large = 0
+        b_key = ""
+        for key, value in a_dictionary.items():
             if value >= large:
                 large = value
-        return large
+                b_key = key
+        return b_key
     return None
