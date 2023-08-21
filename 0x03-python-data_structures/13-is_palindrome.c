@@ -1,5 +1,4 @@
 #include "lists.h"
-#include <stddef.h>
 
 /**
  * reverse_list - Function that reverses a list to a defined end point
