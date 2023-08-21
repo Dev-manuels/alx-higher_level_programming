@@ -9,13 +9,13 @@
 */
 listint_t *reverse_list(listint_t **head, listint_t *ptr_end)
 {
+	listint_t *current = *head, *prev = NULL, *next;
+
 	/* Check that head is valid */
 	if (head == NULL || *head == NULL || (*head)->next == NULL)
 	{
 		return (NULL);
 	}
-
-	listint_t *current = *head, *prev = NULL, *next;
 
 	/* Check if a desired node end is set */
 	if (ptr_end != NULL)
@@ -38,10 +38,10 @@ listint_t *reverse_list(listint_t **head, listint_t *ptr_end)
 */
 int is_palindrome(listint_t **head)
 {
+	listint_t *slow = *head, *fast = *head, *midpoint;
+
 	if (head == NULL || *head == NULL || (*head)->next == NULL)
 		return (0);
-
-	listint_t *slow = *head, *fast = *head, *midpoint;
 
 	while (fast->next != NULL && fast->next->next != NULL)
 	{
