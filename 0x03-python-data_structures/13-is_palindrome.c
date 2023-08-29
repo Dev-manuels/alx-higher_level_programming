@@ -4,24 +4,16 @@
 /**
  * reverse_list - Function that reverses a list to a defined end point
  * @head: pointer to the start of the list
- * @ptr_end: pointer to desired end of reversed list. Can be NULL.
+ * @ptr_end: point to end the reversed list
  * Return: pointer to new list on success else Null on failure
 */
 listint_t *reverse_list(listint_t **head, listint_t *ptr_end)
 {
 	listint_t *current = *head, *prev = NULL, *next;
 
-	/* Check that head is valid */
-	if (head == NULL || *head == NULL || (*head)->next == NULL)
-	{
-		return (NULL);
-	}
-
-	/* Check if a desired node end is set */
-	if (ptr_end != NULL)
-		prev = ptr_end;
+	next = current->next;
 	/* Reverse the list */
-	while (current->next != NULL)
+	while (next->next != ptr_end)
 	{
 		next = current->next;
 		current->next = prev;
@@ -41,7 +33,7 @@ int is_palindrome(listint_t **head)
 	listint_t *slow, *fast, *midpoint;
 
 	if (head == NULL || *head == NULL || (*head)->next == NULL)
-		return (0);
+		return (1);
 
 	slow = *head;
 	fast = *head;
@@ -54,23 +46,20 @@ int is_palindrome(listint_t **head)
 	{
 		midpoint = slow;
 		fast = *head;
-		while (fast->next != midpoint)
-			fast = fast->next;
-		fast = reverse_list(&fast, NULL);
+		fast = reverse_list(&fast, midpoint);
 		slow = slow->next;
 	} else
 	{
 		midpoint = slow->next;
 		fast = *head;
-		while (fast->next != midpoint)
-			fast = fast->next;
-		fast = reverse_list(&fast, NULL);
-		slow = slow->next;
+		printf("bfrev%d\n", fast->n);
+		fast = reverse_list(&fast, midpoint);
+		printf("afrev%d\n", fast->n);
+		slow = midpoint;
 	}
 	while (slow != NULL && fast != NULL)
 	{
-		if (fast->n != slow->n)
-			return (0);
+		printf("s%d == f%d\n", slow->n, fast->n);
 		slow = slow->next;
 		fast = fast->next;
 	}
