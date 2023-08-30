@@ -11,17 +11,8 @@ class Square:
 
         Args:
             __size (int): size of square object
-
-        Raises:
-            TypeError: "size must be an integer"
-            ValueError: "size must be >= 0"
         """
-        if not isinstance(size, int):
-            raise TypeError("size must be an integer")
-        elif int(size) < 0:
-            raise ValueError("size must be >= 0")
-        else:
-            self.__size = int(size)
+        self.__size = int(size)
 
     def area(self):
         """Calculates the area of a Square object
@@ -59,6 +50,8 @@ class Square:
             self.__size = int(value)
 
     def my_print(self):
+        """Prints the square with character #
+        """
         if self.__size < 0:
             print()
         else:
