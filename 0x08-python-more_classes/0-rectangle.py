@@ -3,4 +3,7 @@
 
 
 class Rectangle:
-    pass
+    """ Rectangle class
+    """
+    def __init__(self):
+        pass
