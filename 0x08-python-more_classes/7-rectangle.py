@@ -41,6 +41,12 @@ class Rectangle:
         """Height getter"""
         return self.__height
 
+    @property
+    def print_symbol(self):
+        """print_symbol
+        """
+        return self.print_symbol
+
     @height.setter
     def height(self, value):
         """Height setter
@@ -84,15 +90,16 @@ class Rectangle:
         Returns:
             string: string representation of rectangle object
         """
-        str = ""
-        if self.width == 0 or self.height == 0:
-            return str
+        tmp = ""
+        if self.width <= 0 or self.height <= 0:
+            return tmp
         else:
-            for _ in range(self.height):
+            for i in range(0, self.height):
                 for _ in range(self.width):
-                    str += print_symbol
-                str += '\n'
-            return str
+                    tmp += self.print_symbol
+                if i != self.height - 1:
+                    tmp += '\n'
+            return tmp
 
     def __repr__(self):
         """Return a string representation of the object."""
