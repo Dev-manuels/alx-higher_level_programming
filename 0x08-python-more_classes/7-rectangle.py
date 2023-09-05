@@ -41,12 +41,6 @@ class Rectangle:
         """Height getter"""
         return self.__height
 
-    @property
-    def print_symbol(self):
-        """print_symbol
-        """
-        return self.print_symbol
-
     @height.setter
     def height(self, value):
         """Height setter
@@ -96,7 +90,7 @@ class Rectangle:
         else:
             for i in range(0, self.height):
                 for _ in range(self.width):
-                    tmp += self.print_symbol
+                    tmp += str(self.print_symbol)
                 if i != self.height - 1:
                     tmp += '\n'
             return tmp
