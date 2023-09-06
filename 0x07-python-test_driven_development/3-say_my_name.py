@@ -1,5 +1,19 @@
 #!/usr/bin/python3
-def say_my_name(first_name, last_name=""):
+"""
+Module containing say_my_name
+"""
+
+
+def say_my_name(first_name=None, last_name=""):
+    """say_my_name prints My name is <first name> <last name>
+
+    Args:
+        first_name (str): first name. Defaults to None
+        last_name (str, optional): last name. Defaults to "".
+
+    Raises:
+        TypeError: If first or last name is not a string
+    """
     if not isinstance(first_name, str):
         raise TypeError("first_name must be a string")
     elif not isinstance(last_name, str):
