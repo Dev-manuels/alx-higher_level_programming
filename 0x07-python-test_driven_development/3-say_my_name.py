@@ -14,7 +14,7 @@ def say_my_name(first_name=None, last_name=""):
     Raises:
         TypeError: If first or last name is not a string
     """
-    if not isinstance(first_name, str):
+    if (not isinstance(first_name, str)) or first_name is None:
         raise TypeError("first_name must be a string")
     elif not isinstance(last_name, str):
         raise TypeError("last_name must be a string")
