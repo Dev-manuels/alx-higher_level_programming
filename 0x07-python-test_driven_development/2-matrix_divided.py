@@ -22,6 +22,12 @@ def matrix_divided(matrix=None, numb=None):
         list: new list with all elements divided by divisor
     """
     new_list = []
+    """Validate matrix"""
+    if not isinstance(matrix, list):
+        raise TypeError(
+            "matrix must be a matrix (list of lists) of "
+            "integers/floats"
+        )
     """Validate div"""
     if not isinstance(numb, (int, float)):
         raise TypeError(
@@ -29,12 +35,6 @@ def matrix_divided(matrix=None, numb=None):
         )
     elif numb == 0:
         raise ZeroDivisionError("division by zero")
-    """Validate matrix"""
-    if not isinstance(matrix, list):
-        raise TypeError(
-            "matrix must be a matrix (list of lists) of "
-            "integers/floats"
-        )
     """
     check that matrix is a list of list
     and containing floats or int
