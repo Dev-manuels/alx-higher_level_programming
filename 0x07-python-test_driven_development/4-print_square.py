@@ -19,10 +19,7 @@ def print_square(size):
     elif size < 0:
         raise ValueError("size must be >= 0")
     else:
-        if size == 0:
-            print()
-        else:
+        for _ in range(size):
             for _ in range(size):
-                for _ in range(size):
-                    print("#", end="")
-                print()
+                print("#", end="")
+            print()
