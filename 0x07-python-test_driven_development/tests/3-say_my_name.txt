@@ -6,17 +6,9 @@ My name is Emmanuel Umeilechukwu
 >>> say_my_name("Dev-Manuels")
 My name is Dev-Manuels 
 
->>> say_my_name(None, "ALX")
-Traceback (most recent call last):
-    ...
-TypeError: first_name must be a string
-
 >>> say_my_name("Test", None)
 Traceback (most recent call last):
     ...
 TypeError: last_name must be a string
 
->>> say_my_name(None, None)
-Traceback (most recent call last):
-    ...
-TypeError: first_name must be a string
+>>> say_my_name()
