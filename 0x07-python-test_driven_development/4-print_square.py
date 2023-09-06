@@ -8,7 +8,7 @@ def print_square(size=None):
     """print_square _summary_
 
     Args:
-        size (int, optional): Size of square.
+        size (int): Size of square.
         Defaults to None and prints nothing.
 
     Raises:

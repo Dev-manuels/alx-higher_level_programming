@@ -4,12 +4,13 @@ Module for matrix_divided
 """
 
 
-def matrix_divided(matrix, numb):
+def matrix_divided(matrix=None, numb=None):
     """matrix_divided divides a matrix by div
 
     Args:
         matrix (list): list of list with values to be divided
-        numb (int): divisor
+            Defailts to None
+        numb (int): divisor. Defaults to None
 
     Raises:
         TypeError: When matrix is not a list of list containing int/floats,
