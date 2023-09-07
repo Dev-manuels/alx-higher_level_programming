@@ -19,6 +19,8 @@ class Test_max_integer(unittest.TestCase):
         self.assertEqual(max_integer([-1, -2, -3]), -1)
         self.assertEqual(max_integer([11.2, 2.6, 3.9, 4.3]), 11.2)
         self.assertEqual(max_integer([-11.2, -2.6, -3.9, -4.3]), -2.6)
+        self.assertEqual(max_integer([11.2]), 11.2)
+        self.assertEqual(max_integer([-4.3]), -4.3)
 
     def test_empty_list(self):
         self.assertEqual(max_integer(), None)
