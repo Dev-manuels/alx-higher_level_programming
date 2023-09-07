@@ -20,10 +20,18 @@ def text_indentation(text=None):
             if text[i] == ' ' and text[i + 1] in ('.', '?', ':'):
                 i += 1
                 print(text[i] + "\n\n", end="")
+                try:
+                    if text[i + 1] == ' ':
+                        i = i + 1
+                except IndexError:
+                    pass
             elif text[i] in ('.', '?', ':'):
                 print(text[i] + "\n\n", end="")
-                if text[i + 1] == ' ':
-                    i = i + 1
+                try:
+                    if text[i + 1] == ' ':
+                        i = i + 1
+                except IndexError:
+                    pass
             else:
                 print(text[i], end="")
             i += 1
