@@ -29,7 +29,8 @@ def text_indentation(text=None):
                 print(text[i] + "\n\n", end="")
                 try:
                     if text[i + 1] == ' ':
-                        i = i + 1
+                        while (text[i + 1] == " "):
+                            i += 1
                 except IndexError:
                     pass
             else:
