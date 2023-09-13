@@ -13,8 +13,4 @@ def lookup(obj):
     Returns:
         list: list of available attributes and methods of obj
     """
-    new_list = []
-    for attr in dir(obj):
-        new_list.append(attr)
-
-    return new_list
+    return list(dir(obj))
