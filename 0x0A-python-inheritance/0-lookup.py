@@ -13,4 +13,9 @@ def lookup(obj):
     Returns:
         list: list of available attributes and methods of obj
     """
-    return list(obj.__dict__)
+    new_list = []
+    for attr in dir(obj):
+        if not callable(getattr(obj, attr)) or attr.startswith("__"):
+            new_list.append(attr)
+
+    return new_list
