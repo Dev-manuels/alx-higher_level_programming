@@ -21,7 +21,6 @@ class Rectangle(BaseGeometry):
             width (int): width of rectangle object to be created
             height (int): height of rectangle object to be created
         """
-        super().__init__()
         self.integer_validator("width", width)
         self.__width = width
         self.integer_validator("height", height)
