@@ -1,0 +1,22 @@
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+>>> Bg = BaseGeometry()
+
+>>> Bg.integer_validator("my_int", 12)
+
+>>> Bg.integer_validator("age", 40)
+
+>>> Bg.integer_validator("Height", "Tall")
+Traceback (most recent call last):
+    ...
+TypeError: Height must be an integer
+
+>>> Bg.integer_validator("Height", 0)
+Traceback (most recent call last):
+    ...
+ValueError: Height must be greater than 0
+
+>>> Bg.area()
+Traceback (most recent call last):
+    ...
+Exception: area() is not implemented
