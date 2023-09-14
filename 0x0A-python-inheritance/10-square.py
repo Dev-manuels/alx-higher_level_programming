@@ -21,7 +21,7 @@ class Square(Rectangle):
         Args:
             size (int): size of Square object
         """
-        self.integer_validator(size)
+        self.integer_validator("size", size)
         self.__size = size
 
     def area(self):
