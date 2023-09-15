@@ -14,4 +14,4 @@ def write_file(filename="", text=""):
     if len(filename) > 1 and len(text) > 1:
         with open(filename, mode="w", encoding="utf-8") as file:
             count = file.write(text)
-    return count
+            return count
