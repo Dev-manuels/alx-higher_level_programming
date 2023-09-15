@@ -11,7 +11,7 @@ def write_file(filename="", text=""):
         filename (str): file path/ file name. Defaults to "".
         text (str): text to write to file. Defaults to "".
     """
-    if len(filename) > 1 and len(text) > 1:
+    if len(filename) > 0 and len(text) > 0:
         with open(filename, mode="w", encoding="utf-8") as file:
             count = file.write(text)
             return count
