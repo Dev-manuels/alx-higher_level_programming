@@ -1,4 +1,4 @@
-#!usr/bin/python3
+#!/usr/bin/python3
 """
 Module containing function read_file that reads a text file(UTF8)
 and prints its content to stdout
