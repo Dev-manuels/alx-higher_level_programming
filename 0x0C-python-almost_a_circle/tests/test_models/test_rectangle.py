@@ -16,7 +16,7 @@ class TestRectangle(unittest.TestCase):
     """
     def setUp(self):
         # Create a rectangle object for testing
-        self.r1 = Rectangle(3, 2)
+        self.r1 = Rectangle(3, 2, 0, 0, 34)
 
     def test_rectangle_constructor(self):
         """test_rectangle_constructor
@@ -118,6 +118,18 @@ class TestRectangle(unittest.TestCase):
 
         # Verify that the displayed rectangle matches the expected output
         expected_output = "###\n###\n"
+        self.assertEqual(output, expected_output)
+
+    def test_str(self):
+        # Redirect stdout to capture the printed output
+        with patch('sys.stdout', new_callable=io.StringIO) as mock_stdout:
+            print(self.r1)
+
+            # Get the captured output
+            output = mock_stdout.getvalue()
+
+        # Verify that the displayed rectangle matches the expected output
+        expected_output = "[Rectangle] (34) 0/0 - 3/2\n"
         self.assertEqual(output, expected_output)
 
 

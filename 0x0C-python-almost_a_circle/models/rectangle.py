@@ -149,6 +149,13 @@ class Rectangle(Base):
                 print("#", end="")
             print()
 
+    def __str__(self):
+        """__str__
+        string representation of rectangle object
+        """
+        return (f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - "
+                f"{self.__width}/{self.__height}")
+
     def __init__(self, width, height, x=0, y=0, id=None):
         """__init__
         Constructor
