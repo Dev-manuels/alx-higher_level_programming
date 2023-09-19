@@ -140,6 +140,12 @@ class Rectangle(Base):
         else:
             self.__y = y
 
+    def display(self):
+        for _ in range(self.__height):
+            for _ in range(self.__width):
+                print("#", end="")
+            print()
+
     def __init__(self, width, height, x=0, y=0, id=None):
         """__init__
         Constructor

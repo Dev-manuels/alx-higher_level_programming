@@ -1,8 +1,10 @@
 """
 Module containing unittests for rectangle class
 """
+import io
 import unittest
 from models.rectangle import Rectangle
+from unittest.mock import patch
 
 
 class TestRectangle(unittest.TestCase):
@@ -12,6 +14,10 @@ class TestRectangle(unittest.TestCase):
     Args:
         unittest (class): unittest
     """
+    def setUp(self):
+        # Create a rectangle object for testing
+        self.r1 = Rectangle(3, 2)
+
     def test_rectangle_constructor(self):
         """test_rectangle_constructor
         test the Rectangle class constructor without id
@@ -100,7 +106,19 @@ class TestRectangle(unittest.TestCase):
 
     def test_area(self):
         r = Rectangle(10, 2)
-        self.assertEqual(r.area, 20)
+        self.assertEqual(r.area(), 20)
+
+    def test_display(self):
+        # Redirect stdout to capture the printed output
+        with patch('sys.stdout', new_callable=io.StringIO) as mock_stdout:
+            self.r1.display()
+
+            # Get the captured output
+            output = mock_stdout.getvalue()
+
+        # Verify that the displayed rectangle matches the expected output
+        expected_output = "###\n###\n"
+        self.assertEqual(output, expected_output)
 
 
 if __name__ == '__main__':
