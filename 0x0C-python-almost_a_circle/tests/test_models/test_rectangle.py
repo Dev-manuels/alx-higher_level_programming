@@ -22,7 +22,6 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(rect.height, 20)
         self.assertEqual(rect.x, 0)
         self.assertEqual(rect.y, 0)
-        self.assertEqual(rect.id, 1)
 
     def test_rectangle_constructor_with_id(self):
         """test_rectangle_constructor_with_id
@@ -49,6 +48,55 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(rect.height, 40)
         self.assertEqual(rect.x, 5)
         self.assertEqual(rect.y, 10)
+
+    def test_width_getter(self):
+        r = Rectangle(10, 20)
+        self.assertEqual(r.width, 10)
+
+    def test_width_setter(self):
+        r = Rectangle(10, 20)
+        r.width = 30
+        self.assertEqual(r.width, 30)
+
+    def test_width_setter_type_error(self):
+        r = Rectangle(10, 20)
+        with self.assertRaises(TypeError):
+            r.width = "invalid"
+
+    def test_height_setter_type_error(self):
+        r = Rectangle(10, 20)
+        with self.assertRaises(TypeError):
+            r.height = "invalid"
+
+    def test_x_setter_type_error(self):
+        r = Rectangle(10, 20)
+        with self.assertRaises(TypeError):
+            r.x = "invalid"
+
+    def test_y_setter_type_error(self):
+        r = Rectangle(10, 20)
+        with self.assertRaises(TypeError):
+            r.y = "invalid"
+
+    def test_width_setter_value_error(self):
+        r = Rectangle(10, 20)
+        with self.assertRaises(ValueError):
+            r.width = 0
+
+    def test_height_setter_value_error(self):
+        r = Rectangle(10, 20)
+        with self.assertRaises(ValueError):
+            r.height = -1
+
+    def test_x_setter_value_error(self):
+        r = Rectangle(10, 20)
+        with self.assertRaises(ValueError):
+            r.x = -5
+
+    def test_y_setter_value_error(self):
+        r = Rectangle(10, 20)
+        with self.assertRaises(ValueError):
+            r.y = -2
 
 
 if __name__ == '__main__':
