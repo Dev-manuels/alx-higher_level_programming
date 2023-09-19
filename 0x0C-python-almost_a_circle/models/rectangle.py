@@ -31,7 +31,6 @@ class Rectangle(Base):
     def y(self):
         return self.__y
 
-    @property
     def area(self):
         return (self.__height * self.__width)
 
