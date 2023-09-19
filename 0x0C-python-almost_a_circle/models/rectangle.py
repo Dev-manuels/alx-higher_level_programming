@@ -17,21 +17,51 @@ class Rectangle(Base):
     """
     @property
     def width(self):
+        """width
+        getter for width
+
+        Returns:
+            int: value for width
+        """
         return self.__width
 
     @property
     def height(self):
+        """height
+        getter for height
+
+        Returns:
+            int: value of height
+        """
         return self.__height
 
     @property
     def x(self):
+        """x
+        getter for x
+
+        Returns:
+            int: value of x
+        """
         return self.__x
 
     @property
     def y(self):
+        """y
+        getter for y
+
+        Returns:
+            int: value of y
+        """
         return self.__y
 
     def area(self):
+        """area
+        returns area of rectangle object
+
+        Returns:
+            int: area of object
+        """
         return (self.__height * self.__width)
 
     @width.setter
@@ -111,6 +141,16 @@ class Rectangle(Base):
             self.__y = y
 
     def __init__(self, width, height, x=0, y=0, id=None):
+        """__init__
+        Constructor
+
+        Args:
+            width (int): width
+            height (int): height
+            x (int, optional): x. Defaults to 0.
+            y (int, optional): y. Defaults to 0.
+            id (_type_, optional): precise id for object. Defaults to None.
+        """
         super().__init__(id)
         self.width = width
         self.height = height
