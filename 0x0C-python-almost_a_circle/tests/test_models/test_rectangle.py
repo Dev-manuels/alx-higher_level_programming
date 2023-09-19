@@ -102,5 +102,6 @@ class TestRectangle(unittest.TestCase):
         r = Rectangle(10, 2)
         self.assertEqual(r.area, 20)
 
+
 if __name__ == '__main__':
     unittest.main()
