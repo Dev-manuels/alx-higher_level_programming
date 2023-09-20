@@ -40,11 +40,26 @@ class TestSquare(unittest.TestCase):
         """test_square_setters
         test property setters of class square
         """
-        rect = Square(10)
-        self.assertEqual(rect.width, 10)
-        rect.width = 30
-        rect.x = 5
-        rect.y = 10
-        self.assertEqual(rect.width, 30)
-        self.assertEqual(rect.x, 5)
-        self.assertEqual(rect.y, 10)
+        sqr = Square(10)
+        self.assertEqual(sqr.width, 10)
+        sqr.width = 30
+        sqr.x = 5
+        sqr.y = 10
+        self.assertEqual(sqr.width, 30)
+        sqr.size = 20
+        self.assertEqual(sqr.width, 20)
+        self.assertEqual(sqr.height, 20)
+        self.assertEqual(sqr.size, 20)
+        self.assertEqual(sqr.x, 5)
+        self.assertEqual(sqr.y, 10)
+
+    def test_sqaure_str(self):
+        """test_sqaure_str
+        tests the string representation of square
+        """
+        sqr = Square(30, 0, 0, 12)
+        self.assertEqual(str(sqr), "[Square] (12) 0/0 - 30")
+        sqr.size = 10
+        sqr.x = 2
+        sqr.y = 2
+        self.assertEqual(str(sqr), "[Square] (12) 2/2 - 10")
