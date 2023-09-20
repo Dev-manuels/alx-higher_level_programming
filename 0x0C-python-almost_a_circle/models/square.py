@@ -23,6 +23,7 @@ class Square(Rectangle):
             id (int, optional): id. Defaults to None.
         """
         super().__init__(size, size, x, y, id)
+        self.size = size
 
     def __str__(self):
         """__str__
@@ -33,3 +34,23 @@ class Square(Rectangle):
         """
         return (f"[Square] ({self.id}) {self.x}/{self.y} "
                 f"- {self.width}")
+
+    @property
+    def size(self):
+        """size getter
+
+        Returns:
+            int: size of square object
+        """
+        return self.__size
+
+    @size.setter
+    def size(self, size):
+        """size setter
+
+        Args:
+            size (int): new size value
+        """
+        self.width = size
+        self.height = self.width
+        self.__size = self.width
