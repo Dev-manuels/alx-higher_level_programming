@@ -196,7 +196,7 @@ class Rectangle(Base):
         else:
             for key, value in kwargs.items():
                 if key in ("height", "width", "x", "y"):
-                    tmp = "_Rectangle__" + key
+                    tmp = "_" + self.__class__.__name__ + "__" + key
                     self.__dict__.update({tmp: value})
                 elif key == "id":
                     self.__dict__.update({key: value})
