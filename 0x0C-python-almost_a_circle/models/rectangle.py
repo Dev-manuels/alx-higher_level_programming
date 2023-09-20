@@ -160,6 +160,20 @@ class Rectangle(Base):
         return (f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - "
                 f"{self.__width}/{self.__height}")
 
+    def update(self, *args):
+        """update
+        update attributes of a rectangle object
+        """
+        if len(args) != 0:
+            try:
+                self.id = args[0]
+                self.width = args[1]
+                self.height = args[2]
+                self.x = args[3]
+                self.y = args[4]
+            except IndexError:
+                pass
+
     def __init__(self, width, height, x=0, y=0, id=None):
         """__init__
         Constructor
