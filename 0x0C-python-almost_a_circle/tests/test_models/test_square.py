@@ -8,8 +8,17 @@ from unittest.mock import patch
 
 
 class TestSquare(unittest.TestCase):
+    """TestSquare
+    Test case class for Square
+
+    Args:
+        unittest (Class): Unittest
+    """
 
     def test_square_constructor(self):
+        """test_square_constructor
+        tests that the Square class basic constructor works
+        """
         sqr = Square(10)
         self.assertEqual(sqr.height, 10)
         self.assertEqual(sqr.width, 10)
@@ -17,6 +26,9 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(sqr.y, 0)
 
     def test_square_constructor_with_id(self):
+        """test_square_constructor_with_id
+        Test that the full args passed to the constructor are functional
+        """
         sqr = Square(5, 1, 1, 10)
         self.assertEqual(sqr.height, 5)
         self.assertEqual(sqr.width, 5)

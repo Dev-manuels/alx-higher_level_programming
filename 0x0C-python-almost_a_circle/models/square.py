@@ -6,6 +6,12 @@ from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
+    """Square
+    Class Square that inherits from Rectangle
+
+    Args:
+        Rectangle (Class): Super class
+    """
     def __init__(self, size, x=0, y=0, id=None):
         """__init__
         Constructor for class Square
