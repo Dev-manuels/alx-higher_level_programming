@@ -15,6 +15,23 @@ class Rectangle(Base):
     Returns:
         object: rectangle object
     """
+    def __init__(self, width, height, x=0, y=0, id=None):
+        """__init__
+        Constructor
+
+        Args:
+            width (int): width
+            height (int): height
+            x (int, optional): x. Defaults to 0.
+            y (int, optional): y. Defaults to 0.
+            id (int, optional): precise id for object. Defaults to None.
+        """
+        super().__init__(id)
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
+
     @property
     def width(self):
         """width
@@ -156,6 +173,9 @@ class Rectangle(Base):
     def __str__(self):
         """__str__
         string representation of rectangle object
+
+        Returns:
+            string: representation of Rectangle object
         """
         return (f"[Rectangle] ({self.id}) {self.x}/{self.y} - "
                 f"{self.width}/{self.height}")
@@ -180,20 +200,3 @@ class Rectangle(Base):
                     self.__dict__.update({tmp: value})
                 elif key == "id":
                     self.__dict__.update({key: value})
-
-    def __init__(self, width, height, x=0, y=0, id=None):
-        """__init__
-        Constructor
-
-        Args:
-            width (int): width
-            height (int): height
-            x (int, optional): x. Defaults to 0.
-            y (int, optional): y. Defaults to 0.
-            id (_type_, optional): precise id for object. Defaults to None.
-        """
-        super().__init__(id)
-        self.width = width
-        self.height = height
-        self.x = x
-        self.y = y
