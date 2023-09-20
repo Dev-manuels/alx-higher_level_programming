@@ -144,12 +144,12 @@ class Rectangle(Base):
         """display
         display rectangle object
         """
-        for _ in range(self.__y):
+        for _ in range(self.y):
             print()
-        for _ in range(self.__height):
-            for _ in range(self.__x):
+        for _ in range(self.height):
+            for _ in range(self.x):
                 print(" ", end="")
-            for _ in range(self.__width):
+            for _ in range(self.width):
                 print("#", end="")
             print()
 
@@ -157,14 +157,14 @@ class Rectangle(Base):
         """__str__
         string representation of rectangle object
         """
-        return (f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - "
-                f"{self.__width}/{self.__height}")
+        return (f"[Rectangle] ({self.id}) {self.x}/{self.y} - "
+                f"{self.width}/{self.height}")
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """update
         update attributes of a rectangle object
         """
-        if len(args) != 0:
+        if len(args) > 0:
             try:
                 self.id = args[0]
                 self.width = args[1]
@@ -173,6 +173,13 @@ class Rectangle(Base):
                 self.y = args[4]
             except IndexError:
                 pass
+        else:
+            for key, value in kwargs.items():
+                if key in ("height", "width", "x", "y"):
+                    tmp = "_Rectangle__" + key
+                    self.__dict__.update({tmp: value})
+                elif key == "id":
+                    self.__dict__.update({key: value})
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """__init__

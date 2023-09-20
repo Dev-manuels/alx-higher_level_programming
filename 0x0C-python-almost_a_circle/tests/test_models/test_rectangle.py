@@ -132,7 +132,7 @@ class TestRectangle(unittest.TestCase):
         expected_output = "[Rectangle] (34) 0/0 - 3/2\n"
         self.assertEqual(output, expected_output)
 
-    def test_update(self):
+    def test_update_args(self):
         rect = Rectangle(1, 2)
         self.assertEqual(rect.width, 1)
         self.assertEqual(rect.height, 2)
@@ -142,6 +142,15 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(rect.x, 10)
         self.assertEqual(rect.y, 60)
         self.assertEqual(rect.id, 30)
+
+    def test_update_kwargs(self):
+        rect2 = Rectangle(1, 2)
+        rect2.update(id=30, width=40, height=5, x=10, y=60)
+        self.assertEqual(rect2.width, 40)
+        self.assertEqual(rect2.height, 5)
+        self.assertEqual(rect2.x, 10)
+        self.assertEqual(rect2.y, 60)
+        self.assertEqual(rect2.id, 30)
 
 
 if __name__ == '__main__':
