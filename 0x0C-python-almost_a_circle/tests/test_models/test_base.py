@@ -29,6 +29,21 @@ class TestBase(unittest.TestCase):
         self.assertIsInstance(obj, Base)
         self.assertEqual(obj.id, 42)
 
+    def test_base_to_json_string(self):
+        new_dict = {'x': 2, 'y': 8, 'id': 1}
+        output = Base.to_json_string([new_dict])
+        self.assertEqual(output, '[{"x": 2, "y": 8, "id": 1}]')
+
+        output = Base.to_json_string(None)
+        self.assertEqual(output, "[{}]")
+
+        output = Base.to_json_string()
+        self.assertEqual(output, "[{}]")
+
+        new_dict = dict()
+        output = Base.to_json_string([new_dict])
+        self.assertEqual(output, "[{}]")
+
 
 if __name__ == '__main__':
     unittest.main()
