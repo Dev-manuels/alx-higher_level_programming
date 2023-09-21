@@ -53,6 +53,17 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(sqr.x, 5)
         self.assertEqual(sqr.y, 10)
 
+    def test_square_set_size_error(self):
+        """test_square_set_size_error
+        test that setting size with invalid value raises
+        expected error
+        """
+        sqr = Square(5)
+        with self.assertRaises(ValueError):
+            sqr.size = -2
+        with self.assertRaises(TypeError):
+            sqr.size = "invalid"
+
     def test_sqaure_str(self):
         """test_sqaure_str
         tests the string representation of square
@@ -63,3 +74,20 @@ class TestSquare(unittest.TestCase):
         sqr.x = 2
         sqr.y = 2
         self.assertEqual(str(sqr), "[Square] (12) 2/2 - 10")
+
+    def test_square_update_args(self):
+        sqr = Square(10)
+        self.assertEqual(sqr.size, 10)
+        sqr.update(10, 5, 1, 1)
+        self.assertEqual(sqr.size, 5)
+        self.assertEqual(sqr.x, 1)
+        self.assertEqual(sqr.y, 1)
+        self.assertEqual(sqr.id, 10)
+
+    def test_square_update_kwargs(self):
+        sqr = Square(1)
+        sqr.update(id=10, size=10, x=1, y=4)
+        self.assertEqual(sqr.size, 10)
+        self.assertEqual(sqr.x, 1)
+        self.assertEqual(sqr.y, 4)
+        self.assertEqual(sqr.id, 10)
