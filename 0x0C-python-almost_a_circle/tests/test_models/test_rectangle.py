@@ -175,6 +175,24 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(rect2.y, 60)
         self.assertEqual(rect2.id, 30)
 
+    def test_recangle_to_dicttionary(self):
+        """test_recangle_to_dicttionary 
+        test to dictionary method of rectangle
+        """
+        r1 = Rectangle(10, 2, 1, 9, 1)
+        test1 = str(r1.to_dictionary)
+        # Redirect stdout to capture the printed output
+        with patch('sys.stdout', new_callable=io.StringIO) as mock_stdout:
+            r1_dictionary = r1.to_dictionary()
+            print(r1_dictionary)
+
+            # Get the captured output
+            output = mock_stdout.getvalue()
+
+        # Verify that the displayed rectangle matches the expected output
+        test2 = "{'width': 10, 'height': 2, 'x': 1, 'y': 9, 'id': 1}\n"
+        self.assertEqual(output, test2)
+
 
 if __name__ == '__main__':
     unittest.main()

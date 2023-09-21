@@ -200,3 +200,18 @@ class Rectangle(Base):
                     self.__dict__.update({tmp: value})
                 elif key == "id":
                     self.__dict__.update({key: value})
+
+    def to_dictionary(self):
+        """to_dictionary
+        genereates representation of a Rectangle as dict
+
+        Returns:
+            dict: representation of a Rectangle object
+        """
+        new_dict = dict()
+        keys = ["width", "height", "x", "y"]
+        for key in keys:
+            tmp = "_" + self.__class__.__name__ + "__" + key
+            new_dict.update({key: self.__dict__[tmp]})
+        new_dict.update({"id": self.id})
+        return new_dict
