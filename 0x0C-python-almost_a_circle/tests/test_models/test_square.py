@@ -91,3 +91,13 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(sqr.x, 1)
         self.assertEqual(sqr.y, 4)
         self.assertEqual(sqr.id, 10)
+
+    def test_square_to_dictionary(self):
+        """test_recangle_to_dicttionary
+        test to dictionary method of rectangle
+        """
+        sqr = Square(5, 1, 1, 10)
+        output = str((sqr.to_dictionary()))
+        # Verify that the displayed rectangle matches the expected output
+        test2 = "{'id': 10, 'size': 5, 'x': 1, 'y': 1}"
+        self.assertEqual(output, test2)
