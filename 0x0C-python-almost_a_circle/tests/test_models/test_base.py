@@ -35,14 +35,13 @@ class TestBase(unittest.TestCase):
         self.assertEqual(output, '[{"x": 2, "y": 8, "id": 1}]')
 
         output = Base.to_json_string(None)
-        self.assertEqual(output, "[{}]")
+        self.assertEqual(output, "[]")
 
         output = Base.to_json_string()
-        self.assertEqual(output, "[{}]")
+        self.assertEqual(output, "[]")
 
-        new_dict = dict()
-        output = Base.to_json_string([new_dict])
-        self.assertEqual(output, "[{}]")
+        output = Base.to_json_string([])
+        self.assertEqual(output, "[]")
 
 
 if __name__ == '__main__':
