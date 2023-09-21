@@ -209,9 +209,9 @@ class Rectangle(Base):
             dict: representation of a Rectangle object
         """
         new_dict = dict()
-        keys = ["width", "height", "x", "y"]
-        for key in keys:
-            tmp = "_" + self.__class__.__name__ + "__" + key
-            new_dict.update({key: self.__dict__[tmp]})
+        new_dict.update({"width": self.width})
+        new_dict.update({"height": self.height})
+        new_dict.update({"x": self.x})
+        new_dict.update({"y": self.y})
         new_dict.update({"id": self.id})
         return new_dict
