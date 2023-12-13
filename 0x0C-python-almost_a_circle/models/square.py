@@ -53,7 +53,7 @@ class Square(Rectangle):
         """
         self.width = size
         self.height = self.width
-        self.__size = self.width
+        self.__size = size
 
     def update(self, *args, **kwargs):
         """update
