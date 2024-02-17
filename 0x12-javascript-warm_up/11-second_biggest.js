@@ -4,9 +4,11 @@ const maxLength = process.argv.length;
 if (maxLength <= 3) {
   console.log(0);
 } else {
-  let sum = 0;
+  let largest = process.argv[2];
   for (let i = 2; i < maxLength; i++) {
-    sum += Number(process.argv[i]);
+    if (process.argv[i] >= largest) {
+      largest = process.argv[i];
+    }
   }
-  console.log(sum);
+  console.log(largest);
 }
