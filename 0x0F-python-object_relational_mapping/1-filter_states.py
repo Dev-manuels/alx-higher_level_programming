@@ -14,7 +14,8 @@ if __name__ == "__main__":
     # Create a cursor object
     cur = db.cursor()
     # execute select query
-    cur.execute("SELECT * FROM states WHERE state.name REGEXP '%^N%' ORDER BY states.id")
+    cur.execute("SELECT * FROM states WHERE state.name \
+                REGEXP '%^N%' ORDER BY states.id")
     rows = cur.fetchall()
     # display result of select query
     for row in rows:
