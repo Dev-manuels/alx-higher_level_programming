@@ -15,7 +15,7 @@ if __name__ == "__main__":
     cur = db.cursor()
     # execute select query
     cur.execute("SELECT * FROM states WHERE name \
-                REGEXP '%^N%' ORDER BY id")
+                REGEXP '^N%' ORDER BY id")
     rows = cur.fetchall()
     # display result of select query
     for row in rows:
