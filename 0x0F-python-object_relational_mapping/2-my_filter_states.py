@@ -17,7 +17,7 @@ if __name__ == "__main__":
     # create cusor object
     cur = db.cursor()
     # create query
-    query = "SELECT * FROM states WHERE name REGEXP '{}' "\
+    query = "SELECT * FROM states WHERE name LIKE'{}' "\
         "ORDER BY states.id".format(find_name)
     # Execute query
     cur.execute(query)
