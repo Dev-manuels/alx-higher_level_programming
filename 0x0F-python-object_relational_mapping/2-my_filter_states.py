@@ -17,7 +17,7 @@ if __name__ == "__main__":
     # create cusor object
     cur = db.cursor()
     # create query
-    query = "SELECT * FROM states WHERE BINARY LIKE '{}' ORDER BY id ASC"\
+    query = "SELECT * FROM states WHERE BINARY LIKE '{}'"\
             .format(find_name)
     # Execute query
     cur.execute(query)
