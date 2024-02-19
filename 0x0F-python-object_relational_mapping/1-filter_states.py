@@ -14,7 +14,7 @@ if __name__ == "__main__":
     # Create a cursor object
     cur = db.cursor()
     # execute select query
-    query = "SELECT * FROM states WHERE name REGEXP '^N.' ORDER BY id ASC"
+    query = "SELECT * FROM states WHERE name REGEXP '^[N,n].' ORDER BY id ASC"
     cur.execute(query)
     rows = cur.fetchall()
     # display result of select query
