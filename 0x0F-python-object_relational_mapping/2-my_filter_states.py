@@ -20,7 +20,7 @@ if __name__ == "__main__":
         ORDER BY states.id".format(find_name)
     # Execute query
     cur.execute(query)
-    rows = cur.fectchall()
+    rows = cur.fetchall()
     # print result
     for row in rows:
         print(row)
