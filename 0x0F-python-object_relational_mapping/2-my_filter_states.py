@@ -11,14 +11,13 @@ import MySQLdb
 if __name__ == "__main__":
     find_name = sys.argv[4]
     # create DB connection
-    db = MySQLdb.connect(user=sys.argv[1],
-                         passwd=sys.argv[2],
+    db = MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2],
                          db=sys.argv[3])
     # create cusor object
     cur = db.cursor()
     # create query
-    query = "SELECT * FROM states WHERE BINARY name = '{}' "\
-        "ORDER BY states.id".format(find_name)
+    query = "SELECT * FROM states WHERE BINARY name = '{}' \
+        ORDER BY states.id".format(find_name)
     # Execute query
     cur.execute(query)
     rows = cur.fectchall()
