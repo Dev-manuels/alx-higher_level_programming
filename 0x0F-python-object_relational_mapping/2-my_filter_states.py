@@ -14,8 +14,8 @@ if __name__ == "__main__":
     # create cusor object
     cur = db.cursor()
     # create query
-    query = ("SELECT * FROM states WHERE REGEX '{}' ".format(sys.argv[4]) +
-             "ORDER BY id ASC")
+    query = "SELECT * FROM states WHERE BINARY REGEX '{}' ORDER BY id ASC"\
+            .format(sys.argv[4])
     # Execute query
     cur.execute(query)
     rows = cur.fectchall()
