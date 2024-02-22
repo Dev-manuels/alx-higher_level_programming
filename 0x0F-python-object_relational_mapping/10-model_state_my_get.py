@@ -21,6 +21,6 @@ if __name__ == "__main__":
         result = session.query(State).filter(State.name == find_state).all()
         if result:
             for row in result:
-                print(f"{row.id}: {row.name}")
+                print(f"{row.id}")
         else:
             print("Not found")
