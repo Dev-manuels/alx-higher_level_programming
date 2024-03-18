@@ -1,2 +1,2 @@
 #!/usr/bin/node
-class Robot {}
+class Rectangle {}

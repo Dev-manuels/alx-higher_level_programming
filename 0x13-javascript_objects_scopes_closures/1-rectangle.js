@@ -1,5 +1,5 @@
 #!/usr/bin/node
-class Robot {
+class Rectangle {
   constructor (w, h) {
     this.width = w;
     this.height = h;
